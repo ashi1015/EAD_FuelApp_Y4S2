@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "823f8a50-3553-4370-8ba5-8771e45029ff",
+		"name": "EAD Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14953577"
+	},
+	"item": [
+		{
+			"name": "Queue",
+			"item": [
+				{
+					"name": "Get all Queue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7165/getFuelQueue",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"getFuelQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Queue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7165/getqueue/2746",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"getqueue",
+								"2746"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Queue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stationId\": \"S003\",\r\n    \"vehicleNumber\": \"2111\",\r\n    \"userId\": \"U003\",\r\n    \"noOfLiters\": \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7165/addFuelStationQueue",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"addFuelStationQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Departure Time update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"OUT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7165/updateQueueState/2746",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"updateQueueState",
+								"2746"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Station",
+			"item": [
+				{
+					"name": "add To Fuel Station",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n  \"location\": \"malabe\",\r\n  \"capacity\": \"50l\",\r\n  \"availability\": \"20l\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7165/addToFuelStation",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"addToFuelStation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Fuel Station By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n  \"location\": \"malabe\",\r\n  \"capacity\": \"50l\",\r\n  \"availability\": \"20l\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7165/getfuelstationById/63574437700c097aa2c3962f",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"getfuelstationById",
+								"63574437700c097aa2c3962f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "add To Fuel Station",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7165/getFuelQueueHistory",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"getFuelQueueHistory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
